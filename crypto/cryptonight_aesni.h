@@ -266,7 +266,7 @@ void cryptonight_hash(const void* input, size_t len, void* output, cryptonight_c
             cl = ((uint64_t*)&l0[idx0 & 0x1FFFF0])[0];
             ch = ((uint64_t*)&l0[idx0 & 0x1FFFF0])[1];
 
-            lo = _umul128(idx0, cl, &hi);
+            lo = _mulx_u64(idx0, cl, (long long unsigned int*)&hi);
 
 
             look = idx0 & 0x1FFFF0;
